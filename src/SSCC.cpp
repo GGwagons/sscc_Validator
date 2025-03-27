@@ -93,7 +93,7 @@ std::string SSCC::errorHandle(SSCCError &code) {
 
 void SSCC::printNcheck(const std::string &codes) {
     theBigSetter(codes);
-    std::vector<SSCCError> errors = proccess(codes);
+    std::vector<SSCCError> errors = process(codes);
     std::string print = "SSCC: [ " + codes + " ] ";
     int count = 0;
     for (size_t i = 0; i < errors.size(); ++i) {
@@ -112,7 +112,7 @@ void SSCC::printNcheck(const std::string &codes) {
     }
 }
 
-std::vector<SSCCError> SSCC::proccess(const std::string &code) {
+std::vector<SSCCError> SSCC::process(const std::string &code) {
     std::vector<SSCCError> errors;
     if (code.length() != 20) {
         errors.push_back(SSCCError::INVALID_LENGTH);

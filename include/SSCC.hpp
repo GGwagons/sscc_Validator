@@ -61,5 +61,5 @@ class SSCC {
 		int isValidLuhn(const std::string &code);
 		std::string errorHandle(SSCCError &code);
 		void printNcheck(const std::string &codes);
-		std::vector<SSCCError> proccess(const std::string &code);
+		std::vector<SSCCError> process(const std::string &code);
 };
