@@ -31,7 +31,7 @@ OBJECTS = $(addprefix $(OBJECTS_DIR), $(OBJECTS_LIST))
 all: $(NAME)
 
 $(NAME): $(OBJECTS_DIR) $(OBJECTS)
-	@echo "$(YELLOW) Building $(BLUE) IRC $(YELLOW) program... $(RESET)\n"
+	@echo "$(YELLOW) Building $(BLUE) $(NAME) $(YELLOW) program... $(RESET)\n"
 	@$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJECTS) $(INCL) -o $@
 	@echo "$(GREEN) Done $(RESET)\n"
 
