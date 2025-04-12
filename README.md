@@ -97,6 +97,15 @@ The program can be used in the following ways:
    ./sscc --test
    ```
 
+4. Use the `--live` option for instant validation:
+   ```sh
+   ./sscc --live
+   ```
+   When prompted, provide the file path where the RF scanner saves the SSCC codes:
+   ```sh
+   Input file path: <file_path>
+   ```
+
 ### Output
 
 - Valid SSCC codes are displayed in green.

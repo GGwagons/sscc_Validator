@@ -112,6 +112,27 @@ void SSCC::printNcheck(const std::string &codes) {
     }
 }
 
+void SSCC::printNcheckLive(const std::string &codes, std::ostream &out) {
+    theBigSetter(codes);
+    std::vector<SSCCError> errors = process(codes);
+    std::string print = "SSCC: [ " + codes + " ] ";
+    int count = 0;
+
+    for (size_t i = 0; i < errors.size(); ++i) {
+        if (errors[i] == SSCCError::NONE) {
+            out << print << errorHandle(errors[i]) << "\n";
+        } else {
+            if (count == 0) {
+                out << print << "\n";
+                count++;
+            }
+            out << "\t\t|\n";
+            out << "\t\t-> " << errorHandle(errors[i]) << "\n";
+        }
+        out << "\n";
+    }
+}
+
 std::vector<SSCCError> SSCC::process(const std::string &code) {
     std::vector<SSCCError> errors;
     if (code.length() != 20) {

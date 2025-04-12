@@ -9,7 +9,7 @@ CYAN = \033[0;36m
 RESET = \033[0m
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++17
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -pthread
 
 RM = rm -rf
 
@@ -20,7 +20,7 @@ HEADER_DIR = ./
 HEADER = $(addprefix $(HEADER_DIR), $(HEADER_LIST))
 
 SOURCES_DIR = ./src/
-SOURCES_LIST =	../main.cpp \
+SOURCES_LIST =	main.cpp \
 				SSCC.cpp
 
 SOURCES = $(addprefix $(SOURCES_DIR), $(SOURCES_LIST))
@@ -46,12 +46,12 @@ $(OBJECTS_DIR)%.o: $(SOURCES_DIR)%.cpp $(HEADER)
 clean:
 	@echo "$(RED) Deleting objects files... $(RESET)\n"
 	@$(RM) $(OBJECTS_DIR)
-	@$(RM) main.o
+	@$(RM)
 
 fclean: clean
 	@echo "$(RED) Cleaning built program... $(RESET)\n"
 	@$(RM) -f $(NAME) $(OBJECTS_DIR)
-	@$(RM) main.o
+	@$(RM)
 
 re:
 	@$(MAKE) -s fclean
