@@ -73,7 +73,7 @@ void runLive() {
         std::ifstream inFile(input);
         if (!inFile.is_open()) {
             std::cerr << "Could not open file.\n";
-            continue;
+            return ;
         }
         std::vector<std::string> lines;										// Read all lines into memory
         std::string line;
@@ -99,7 +99,7 @@ void runLive() {
         std::ofstream outFile(input, std::ios::trunc);						// Reopen the file for writing (overwrite all content)
         if (!outFile.is_open()) {
         	std::cerr << "Could not write to file.\n";
-        	continue;
+        	return ;
         }
         for (const auto& l : lines) {										// Write all remaining lines back (original input section)
             outFile << l << "\n";
